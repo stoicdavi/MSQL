@@ -1,0 +1,48 @@
+The dataset that I am using for this SQL statement can be downloaded from https://drive.google.com/file/d/1Cth8F5M7smd4uqE7QNX6vHBSOdK_eank/view?usp=sharing
+
+SELECT * FROM netflix_user_csv.netflix_titles;
+- This SQL statement selects and displays all the data from the table called netflix_titles which is the database called netflix_user_csv
+
+SELECT
+show_id AS showd
+FROM netflix_titles;
+- This SQL select statement selects the show_id as showd it will display the show_id with the title showd
+
+SELECT COUNT(show_id) 
+AS count_alias 
+FROM netflix_titles WHERE 
+country = "India";
+- this SQL statement counts the number of Id that has are related to the country India
+
+SELECT  MIN(show_id) 
+AS show_with_min_id
+FROM netflix_titles;
+- displays the show_id with the min Id
+
+# To count number of unique show_id and in each country
+SELECT release_year, country, COUNT(DISTINCT show_id) AS unique_show_id
+FROM netflix_titles
+GROUP BY release_year, country;
+
+# to arrange data in ascending order based on the duration
+SELECT show_id, title, duration
+FROM netflix_titles
+ORDER BY duration ASC;
+
+
+Questions
+# what is the logest movie
+
+#Hou many DISTINCT countries are there in this data set
+SELECT COUNT(DISTINCT country) as distinct_countries
+FROM netflix_titles;
+this SQL statement gives us a result of
+ans = 22
+
+# What are the first logest movies
+SELECT show_id, title, duration
+FROM netflix_titles
+ORDER BY duration ASC
+limit 30;
+- This will display the first 30 longest movies
+
