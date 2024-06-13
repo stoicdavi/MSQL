@@ -39,10 +39,12 @@ FROM netflix_titles;
 this SQL statement gives us a result of
 ans = 22
 
+- I learned that there are only 22 unique countries in this data set.
+
 # What are the first logest movies
 SELECT show_id, title, duration
 FROM netflix_titles
 ORDER BY duration ASC
 limit 30;
-- This will display the first 30 longest movies
-
+- This will display the first 30 longest movies.
+- I learned that the longest movie in this data set goes upto ones season long.
